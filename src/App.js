@@ -45,7 +45,7 @@ const App = () => {
   }, [notes]);
 
   return (
-    <div className={`${darkMode && "dark-mode"}`}>
+    <div id="base_container" className={`${darkMode && "dark-mode"}`}>
       <div className="container">
         <Header handleDarkMode={setDarkMode} />
         <Search handleSearchNote={setSearchText} />

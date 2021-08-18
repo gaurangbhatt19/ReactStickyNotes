@@ -95,3 +95,6 @@ textarea {
   color: white;
   background-color: black;
 }
+#base_container {
+  height: 960px;
+}
