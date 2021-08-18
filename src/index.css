@@ -1,13 +1,97 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+.container {
+  max-width: 960px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.notes_list {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 20px;
+}
+.notes {
+  background-color: yellow;
+  border-radius: 10px;
+  padding: 1rem;
+  min-height: 170px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  white-space: pre-wrap;
+}
+textarea {
+  background-color: aqua;
+  border: none;
+  resize: none;
+  outline: none;
+  box-shadow: 0px;
+}
+.save {
+  border-radius: 10px;
+  background-color: lightgrey;
+  border: none;
+  padding: 5px 10px 5px 10px;
+}
+.save:hover {
+  background-color: lightgreen;
+  cursor: pointer;
+}
+.notes.new {
+  background-color: aqua;
+}
+.note_footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* space-between used to align one element at right another at left*/
+}
+
+.delete_icon {
+  color: red;
+  cursor: pointer;
+}
+.search_bar {
+  display: flex;
+  align-items: center;
+  background-color: lightgrey;
+  border-radius: 10px;
+  padding: 5px;
+  margin: bottom 5.5em;
+}
+.search_bar input {
+  border: none;
+  background-color: lightgrey;
+  outline: none;
+  box-shadow: none;
+  width: 100%;
+  padding: 0.5em;
+}
+.dark-mode {
+  background-color: black;
+}
+.dark-mode h1 {
+  color: white;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.save.toggle :hover {
+  color: white;
+  background-color: black;
 }
