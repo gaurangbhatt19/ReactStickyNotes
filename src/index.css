@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+ 
 }
 
 code {
@@ -99,6 +101,6 @@ textarea {
   color: white;
   background-color: black;
 }
-#base_container {
-  height: 100%;
+.base_container {
+  height: 100vh;
 }
