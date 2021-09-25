@@ -45,19 +45,21 @@ const App = () => {
   }, [notes]);
 
   return (
-    <div id="base_container" className={`${darkMode && "dark-mode"}`}>
-      <div className="container">
-        <Header handleDarkMode={setDarkMode} />
-        <Search handleSearchNote={setSearchText} />
-        <NotesList
-          notes={notes.filter((note) =>
-            note.text.toLowerCase().includes(searchtext.toLowerCase())
-          )}
-          handleAddNote={addNote}
-          handleDeleteNote={deleteNote}
-        />
+    <>
+      <div id="base_container" className={`${darkMode && "dark-mode"}`}>
+        <div className="container">
+          <Header handleDarkMode={setDarkMode} />
+          <Search handleSearchNote={setSearchText} />
+          <NotesList
+            notes={notes.filter((note) =>
+              note.text.toLowerCase().includes(searchtext.toLowerCase())
+            )}
+            handleAddNote={addNote}
+            handleDeleteNote={deleteNote}
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 

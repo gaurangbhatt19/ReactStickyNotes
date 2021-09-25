@@ -12,7 +12,8 @@ code {
     monospace;
 }
 .container {
-  max-width: 960px;
+  max-width: 100%;
+  max-height: 100%;
   margin-left: auto;
   margin-right: auto;
   padding-left: 20px;
@@ -38,6 +39,8 @@ textarea {
   background-color: aqua;
   border: none;
   resize: none;
+  min-height: 170px;
+  height: 100%;
   outline: none;
   box-shadow: 0px;
 }
@@ -58,6 +61,7 @@ textarea {
   display: flex;
   align-items: center;
   justify-content: space-between; /* space-between used to align one element at right another at left*/
+  margin-top: 20px;
 }
 
 .delete_icon {
@@ -96,5 +100,5 @@ textarea {
   background-color: black;
 }
 #base_container {
-  height: 960px;
+  height: 100%;
 }

@@ -10,16 +10,16 @@ const AddNote = ({handleAddNote}) => {
     const handleSaveClick=()=>{
         if(noteText.trim().length>0){
               handleAddNote(noteText);
-              setNoteText("");    
+              setNoteText("");
         }
       
     }
-    var characterLimit=200;
+    var characterLimit=700;
     return (
         <div className="notes new">
             <textarea rows="8" cols="10" placeholder="Add Note ....." onChange={handleChange} value={noteText}></textarea>
             <div className="note_footer">
-                <small>{characterLimit - noteText.length} Remaining...</small>
+                <small>{characterLimit - noteText.length} Characters Remaining...</small>
                 <button className="save" onClick={handleSaveClick}>Save</button>
             </div>
             
