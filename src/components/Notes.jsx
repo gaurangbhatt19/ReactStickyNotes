@@ -21,10 +21,11 @@ const Notes = ({id,text,date,handleDeleteNote,handleEditNote,setisEdit,isEdit}) 
             <div className="note_footer">
                 <small><strong>{date}</strong></small>
                 <div className=" note_footer icons"> 
-                <MdDeleteForever className="delete_icon" size="1.3em" onClick={()=>handleDeleteNote(id)}/>
                 <AiFillSave className="edit_icon" size="1.3em" onClick={()=>{
                      getedittext()
                 }} />
+                <MdDeleteForever className="delete_icon" size="1.3em" onClick={()=>handleDeleteNote(id)}/>
+                
                 </div>
             </div>
         </div>
