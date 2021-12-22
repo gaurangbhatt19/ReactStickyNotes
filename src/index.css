@@ -23,8 +23,8 @@ code {
 }
 .notes_list {
   display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
   margin-top: 20px;
 }
 .notes {
@@ -46,6 +46,25 @@ textarea {
   outline: none;
   box-shadow: 0px;
 }
+
+.textareadata{
+  background-color: yellow;
+  border: none;
+  resize: none;
+  min-height: 170px;
+  height: 100%;
+  outline: none;
+  box-shadow: 0px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  sans-serif;
+  font-weight: normal;
+  font-size:15px
+
+
+}
+
+
 .save {
   border-radius: 10px;
   background-color: lightgrey;
@@ -65,10 +84,21 @@ textarea {
   justify-content: space-between; /* space-between used to align one element at right another at left*/
   margin-top: 20px;
 }
+.note_footer.icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
 .delete_icon {
   color: red;
   cursor: pointer;
+  margin-left:10px
+}
+
+.edit_icon{
+  color:rgb(16, 236, 16);
+  cursor:pointer;
 }
 .search_bar {
   display: flex;
@@ -102,5 +132,19 @@ textarea {
   background-color: black;
 }
 .base_container {
-  height: 100vh;
+  height: 2000vh;
+}
+
+.edit_note{
+  position: fixed; /* Sit on top of the page content */
+  display: none; /* Hidden by default */
+  width: 100%; /* Full width (cover the whole page) */
+  height: 100%; /* Full height (cover the whole page) */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.5); /* Black background with opacity */
+  z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+  cursor: pointer; /* Add a pointer on hover */
 }

@@ -14,7 +14,7 @@ const AddNote = ({handleAddNote}) => {
         }
       
     }
-    var characterLimit=2200;
+    var characterLimit=2700;
     return (
         <div className="notes new">
             <textarea rows="8" cols="10" placeholder="Add Note ....." onChange={handleChange} value={noteText}></textarea>
