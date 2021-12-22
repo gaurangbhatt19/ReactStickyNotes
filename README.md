@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/5ef38565-7c8a-42c3-b1cf-17bd227a3f5c/deploy-status)](https://app.netlify.com/sites/gaurangreactstickynotesapp/deploys)
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
