@@ -13,8 +13,9 @@ const App = () => {
     },
   ]);
 
- 
-  const[isEdit,setisEdit]=useState(false)
+ const [reloadCheck,setReloadCheck]=useState(true)
+
+ const[isEdit,setisEdit]=useState(false)
 
 
 
@@ -40,9 +41,9 @@ const App = () => {
   };
   const editNote = (id,text) => {
     const edittedNotes=notes;
-    console.log(edittedNotes)
-    console.log(id,"ID")
-    console.log(text,"TEXT")
+    // console.log(edittedNotes)
+    // console.log(id,"ID")
+    // console.log(text,"TEXT")
 
   for(var i=0;i<edittedNotes.length;i++){
     if(edittedNotes[i].id===id){
@@ -52,7 +53,7 @@ const App = () => {
 
   setNotes(edittedNotes)
   localStorage.setItem("react_notes_data",JSON.stringify(notes));
-  console.log(notes)
+  // console.log(notes)
   refreshPage()
 
  
@@ -64,6 +65,16 @@ const App = () => {
 
   const [darkMode, setDarkMode] = useState(false);
 
+  useEffect(()=>{
+   
+   if(!reloadCheck){
+    //  console.log(reloadCheck,"reload")
+      localStorage.setItem("toggle",darkMode)
+      
+   }
+  },[darkMode])
+
+
   useEffect(() => {
   
     const saveNotes = JSON.parse(localStorage.getItem("react_notes_data"));
@@ -71,7 +82,10 @@ const App = () => {
     if (saveNotes) {
       setNotes(saveNotes);
     }
-    
+
+    localStorage.getItem("toggle")==="false" || localStorage.getItem("toggle")===null?setDarkMode(false):setDarkMode(true)
+    // console.log(localStorage.getItem("toggle"))
+    setReloadCheck(!reloadCheck)
   }, []);
 
   useEffect(() => {

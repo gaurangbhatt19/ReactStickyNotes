@@ -6,7 +6,7 @@ import{useRef} from "react"
 const Notes = ({id,text,date,handleDeleteNote,handleEditNote,setisEdit,isEdit}) => {
     var editText=useRef()
     function getedittext(){
-        console.log(editText.current.value)
+        // console.log(editText.current.value)
         handleEditNote(id,editText.current.value)
        
     }
