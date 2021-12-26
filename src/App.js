@@ -29,7 +29,7 @@ const App = () => {
     var newNote = {
       id: nanoid(),
       text: text,
-      date: date.toDateString()+"  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds(),
+      date: date.toLocaleDateString()+"  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds(),
     };
     
     const newNotes = [...notes, newNote];
