@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&display=swap');
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
@@ -36,6 +38,7 @@ code {
   flex-direction: column;
   justify-content: space-between;
   white-space: pre-wrap;
+  
 }
 textarea {
   background-color: aqua;
@@ -45,6 +48,7 @@ textarea {
   height: 100%;
   outline: none;
   box-shadow: 0px;
+  font-family: "Architects Daugther", cursive;
 }
 
 .textareadata{
@@ -59,9 +63,8 @@ textarea {
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
   sans-serif;
   font-weight: normal;
-  font-size:15px
-
-
+  font-size:15px;
+  font-family: "Architects Daugther", cursive;
 }
 
 
