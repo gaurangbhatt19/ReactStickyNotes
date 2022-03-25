@@ -19,8 +19,9 @@ const App = () => {
 
 
 
-  function refreshPage() {
+  function refreshPage(textRef) {
     window.location.reload(false);
+    textRef.current.scrollIntoView()
   }
 
 
@@ -39,11 +40,8 @@ const App = () => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   };
-  const editNote = (id,text) => {
+  const editNote = (id,text,textRef) => {
     const edittedNotes=notes;
-    // console.log(edittedNotes)
-    // console.log(id,"ID")
-    // console.log(text,"TEXT")
 
   for(var i=0;i<edittedNotes.length;i++){
     if(edittedNotes[i].id===id){
@@ -54,7 +52,7 @@ const App = () => {
   setNotes(edittedNotes)
   localStorage.setItem("react_notes_data",JSON.stringify(notes));
   // console.log(notes)
-  refreshPage()
+  refreshPage(textRef)
 
  
 

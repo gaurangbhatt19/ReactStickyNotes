@@ -5,9 +5,9 @@ import{useRef} from "react"
 
 const Notes = ({id,text,date,handleDeleteNote,handleEditNote,setisEdit,isEdit}) => {
     var editText=useRef()
-    function getedittext(){
+    function getedittext(textRef){
         // console.log(editText.current.value)
-        handleEditNote(id,editText.current.value)
+        handleEditNote(id,editText.current.value,textRef)
        
     }
 
@@ -22,7 +22,7 @@ const Notes = ({id,text,date,handleDeleteNote,handleEditNote,setisEdit,isEdit}) 
                 <small><strong>{date}</strong></small>
                 <div className=" note_footer icons"> 
                 <AiFillSave className="edit_icon" size="1.3em" onClick={()=>{
-                     getedittext()
+                     getedittext(editText)
                 }} />
                 <MdDeleteForever className="delete_icon" size="1.3em" onClick={()=>handleDeleteNote(id)}/>
                 
