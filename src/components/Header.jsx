@@ -4,6 +4,11 @@ const Header = ({handleDarkMode}) => {
     return (
         <div className="header">
             <h1>Notes</h1>
+            <button className="save toggle" onClick={()=>{
+                document.getElementById("add_note").scrollIntoView();
+            }}>
+            Add Note      
+            </button>
             <button className="save toggle" onClick={()=>
             handleDarkMode((previousDarkMode)=>!previousDarkMode)}>
             

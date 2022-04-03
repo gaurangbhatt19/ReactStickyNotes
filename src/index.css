@@ -7,7 +7,6 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  height: 100%;
  
 }
 
@@ -25,9 +24,12 @@ code {
 }
 .notes_list {
   display: grid;
-  grid-gap: 2rem;
+  grid-gap: 1.1rem;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   margin-top: 20px;
+  padding: 10px;
+  overflow-y: auto;
+  max-height: 90vh;
 }
 .notes {
   background-color: yellow;
@@ -72,7 +74,10 @@ textarea {
   border-radius: 10px;
   background-color: lightgrey;
   border: none;
-  padding: 5px 10px 5px 10px;
+  padding: 2px;
+  width:100px;
+  height:40px;
+  margin-top:20px;
 }
 .save:hover {
   background-color: lightgreen;
@@ -103,6 +108,16 @@ textarea {
   color:rgb(16, 236, 16);
   cursor:pointer;
 }
+.search{
+  display:grid;
+  grid-template-columns: 88% 12%;
+}
+.search_by_date{
+  border-radius: 4px;
+  padding: 10px;
+  background-color: dodgerblue;
+  color: white
+}
 .search_bar {
   display: flex;
   align-items: center;
@@ -110,8 +125,11 @@ textarea {
   border-radius: 10px;
   padding: 5px;
   margin: bottom 5.5em;
+  width: 80vw;
 }
 .search_bar input {
+  position:-webkit-sticky;
+  position:sticky;
   border: none;
   background-color: lightgrey;
   outline: none;
@@ -126,16 +144,18 @@ textarea {
   color: white;
 }
 .header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: 80% 10% 10%;
+  grid-gap: 5px;
+  /* align-items: center; */
+  /* justify-content: space-between; */
 }
 .save.toggle :hover {
   color: white;
   background-color: black;
 }
 .base_container {
-  height: 70000vh;
+  height: 113vh;
 }
 
 .edit_note{

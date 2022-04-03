@@ -4,12 +4,17 @@ import { nanoid } from "nanoid";
 import NotesList from "./components/NotesList";
 import Search from "./components/Search";
 import Header from "./components/Header";
+import {atomDate} from "../src/recoiljs/atoms"
+import { useRecoilValue } from 'recoil';
+import {selectorDate} from "../src/recoiljs/selectAtoms"
 const App = () => {
+  const dateString = new Date();
+  const validDate=dateString.toString().split(" ").splice(0,5).join(" ")
   const [notes, setNotes] = useState([
     {
       id: nanoid(),
       text: "Demo Note Can Be deleted",
-      date: "16/08/2021",
+      date: validDate,
     },
   ]);
 
@@ -21,16 +26,21 @@ const App = () => {
 
   function refreshPage(textRef) {
     window.location.reload(false);
-    textRef.current.scrollIntoView()
+    window.addEventListener("load",function(){
+      console.log("Refresh")
+      textRef.current.scrollIntoView()
+    })
   }
 
 
   const addNote = (text) => {
     const date = new Date();
+    const validDate=date.toString().split(" ").splice(0,5).join(" ")
+    console.log(validDate)
     var newNote = {
       id: nanoid(),
       text: text,
-      date: date.toLocaleDateString()+"  "+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds(),
+      date: validDate,
     };
     
     const newNotes = [...notes, newNote];
@@ -57,6 +67,7 @@ const App = () => {
  
 
   }
+  var searchDate=useRecoilValue(selectorDate);
 
   // search hook
   const [searchtext, setSearchText] = useState("");
@@ -98,13 +109,18 @@ const App = () => {
           <Search handleSearchNote={setSearchText} />
           <NotesList
             notes={notes.filter((note) =>
-              note.text.toLowerCase().includes(searchtext.toLowerCase())
+              {
+                return searchDate==="dd-mm-yyyy"?note.text.toLowerCase().includes(searchtext.toLowerCase()):{
+                }
+         
+              }
             )}
             handleAddNote={addNote}
             handleDeleteNote={deleteNote}
             handleEditNote={editNote}
             setisEdit={setisEdit}
             isEdit={isEdit}
+            currentDate={atomDate}
           />
         </div>
       </div>
