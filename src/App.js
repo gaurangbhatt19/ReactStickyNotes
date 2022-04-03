@@ -19,17 +19,10 @@ const App = () => {
   ]);
 
  const [reloadCheck,setReloadCheck]=useState(true)
+ const getAtomDate=useRecoilValue(selectorDate)
 
- const[isEdit,setisEdit]=useState(false)
-
-
-
-  function refreshPage(textRef) {
-    window.location.reload(false);
-    window.addEventListener("load",function(){
-      console.log("Refresh")
-      textRef.current.scrollIntoView()
-    })
+  function refreshPage() {
+   
   }
 
 
@@ -50,7 +43,8 @@ const App = () => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
   };
-  const editNote = (id,text,textRef) => {
+
+  const editNote = (id,text) => {
     const edittedNotes=notes;
 
   for(var i=0;i<edittedNotes.length;i++){
@@ -61,12 +55,11 @@ const App = () => {
 
   setNotes(edittedNotes)
   localStorage.setItem("react_notes_data",JSON.stringify(notes));
+  setLocalStorageValues(JSON.parse(localStorage.getItem("react_notes_data")))
   // console.log(notes)
-  refreshPage(textRef)
-
- 
-
+  refreshPage()
   }
+
   var searchDate=useRecoilValue(selectorDate);
 
   // search hook
@@ -83,10 +76,11 @@ const App = () => {
    }
   },[darkMode])
 
+  const [localStorageValues,setLocalStorageValues]=useState(JSON.parse(localStorage.getItem("react_notes_data")))
 
   useEffect(() => {
   
-    const saveNotes = JSON.parse(localStorage.getItem("react_notes_data"));
+    const saveNotes = localStorageValues;
 
     if (saveNotes) {
       setNotes(saveNotes);
@@ -95,7 +89,7 @@ const App = () => {
     localStorage.getItem("toggle")==="false" || localStorage.getItem("toggle")===null?setDarkMode(false):setDarkMode(true)
     // console.log(localStorage.getItem("toggle"))
     setReloadCheck(!reloadCheck)
-  }, []);
+  }, [localStorageValues]);
 
   useEffect(() => {
     localStorage.setItem("react_notes_data", JSON.stringify(notes));
@@ -110,16 +104,12 @@ const App = () => {
           <NotesList
             notes={notes.filter((note) =>
               {
-                return searchDate==="dd-mm-yyyy"?note.text.toLowerCase().includes(searchtext.toLowerCase()):{
-                }
-         
+                return searchDate==="dd-mm-yyyy" || searchDate===''?note.text.toLowerCase().includes(searchtext.toLowerCase()):note.date.toLowerCase().includes(searchDate.toLowerCase())
               }
             )}
             handleAddNote={addNote}
             handleDeleteNote={deleteNote}
             handleEditNote={editNote}
-            setisEdit={setisEdit}
-            isEdit={isEdit}
             currentDate={atomDate}
           />
         </div>
