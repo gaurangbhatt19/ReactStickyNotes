@@ -19,15 +19,15 @@ const Search = ({handleSearchNote}) => {
         </div>
         <input type="date" className="search_by_date" value={dateHTML} onChange={(e)=>{
             setHTMLDateValue(e.target.value)
-            console.log(dateHTML)
+            // console.log(dateHTML)
             if(e.target.value!==""){
                 const [year,month,day]=e.target.value.toString().split("-")
             const dateValue=new Date(year,parseInt(month)-1,day)
             setDateValue(dateValue.toString().split(" ").splice(0,4).join(" "));
-            console.log(date, typeof date)
+            // console.log(date, typeof date)
             }else{
                 setDateValue("dd-mm-yyyy")
-                console.log(date, typeof date)
+                // console.log(date, typeof date)
             }
             
         }}/>

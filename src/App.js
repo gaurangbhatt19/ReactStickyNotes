@@ -29,7 +29,7 @@ const App = () => {
   const addNote = (text) => {
     const date = new Date();
     const validDate=date.toString().split(" ").splice(0,5).join(" ")
-    console.log(validDate)
+    // console.log(validDate)
     var newNote = {
       id: nanoid(),
       text: text,

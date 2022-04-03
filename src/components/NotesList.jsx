@@ -8,7 +8,7 @@ import {useEffect} from "react"
 
 const NotesList = ({ notes,handleAddNote,handleDeleteNote,handleEditNote,setisEdit, isEdit,currentDate}) => {
     function searchDateValue(){
-   console.log("Search")
+//    console.log("Search")
    return notes.map((note)=> 
     {
       return <Notes key={note.id} id={note.id} text={note.text} date={note.date} handleDeleteNote={handleDeleteNote} handleEditNote={handleEditNote} />
