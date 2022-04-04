@@ -6,7 +6,7 @@ import { useRecoilValue } from 'recoil';
 import {useEffect} from "react"
 
 
-const NotesList = ({ notes,handleAddNote,handleDeleteNote,handleEditNote,setisEdit, isEdit,currentDate}) => {
+const NotesList = ({ notes,handleAddNote,handleDeleteNote,handleEditNote,currentDate}) => {
     function searchDateValue(){
 //    console.log("Search")
    return notes.map((note)=> 

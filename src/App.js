@@ -104,7 +104,7 @@ const App = () => {
           <NotesList
             notes={notes.filter((note) =>
               {
-                return searchDate==="dd-mm-yyyy" || searchDate===''?note.text.toLowerCase().includes(searchtext.toLowerCase()):note.date.toLowerCase().includes(searchDate.toLowerCase())
+                return searchDate==="dd-mm-yyyy" || searchDate===''?note.text.toLowerCase().includes(searchtext.toLowerCase()):(note.date.toLowerCase().includes(searchDate.toLowerCase()) &&note.text.toLowerCase().includes(searchtext.toLowerCase()))
               }
             )}
             handleAddNote={addNote}
