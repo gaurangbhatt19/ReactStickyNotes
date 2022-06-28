@@ -11,6 +11,18 @@ body {
   overflow-x: hidden;
 }
 
+.notes_list::-webkit-scrollbar{
+  width: 4px;
+}
+
+.notes_list::-webkit-scrollbar-track{
+  background-color: aqua;
+}
+.notes_list::-webkit-scrollbar-thumb{
+  background-color: yellow;
+}
+
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -31,6 +43,8 @@ code {
   padding: 10px;
   overflow-y: auto;
   max-height: 80vh;
+  scrollbar-width: thin;
+  scrollbar-color: rebeccapurple green;
 }
 .notes {
   background-color: yellow;
@@ -117,7 +131,9 @@ textarea {
   border-radius: 4px;
   padding: 10px;
   background-color: dodgerblue;
-  color: white
+  color: white;
+  position: relative;
+  left:-4em;
 }
 .search_bar {
   display: flex;
