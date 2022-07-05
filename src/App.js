@@ -7,6 +7,7 @@ import Header from "./components/Header";
 import {atomDate} from "../src/recoiljs/atoms"
 import { useRecoilValue } from 'recoil';
 import {selectorDate} from "../src/recoiljs/selectAtoms"
+import FixedHeader from "./components/FixedHeader";
 const App = () => {
   const dateString = new Date();
   const validDate=dateString.toString().split(" ").splice(0,5).join(" ")
@@ -99,8 +100,10 @@ const App = () => {
     <>
       <div id="base_container" className={`${darkMode && "dark-mode"} base_container`}>
         <div className="container">
+          <FixedHeader>
           <Header handleDarkMode={setDarkMode} />
           <Search handleSearchNote={setSearchText} />
+          </FixedHeader>
           <NotesList
             notes={notes.filter((note) =>
               {
