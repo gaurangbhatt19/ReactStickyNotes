@@ -1,10 +1,6 @@
-
 import {MdDeleteForever} from 'react-icons/md'
-import { cloneElement } from 'react';
 import {AiFillSave} from 'react-icons/ai'
 import{useRef} from "react"
-// import { ToastContainer, toast } from 'react-toastify';
-// import "react-toastify/dist/ReactToastify.css"
 import { ToastContainer, toast } from 'material-react-toastify';
 import 'material-react-toastify/dist/ReactToastify.css';
 
@@ -30,7 +26,7 @@ const Notes = ({id,text,date,handleDeleteNote,handleEditNote}) => {
     }
 
     return (
-        <div className="notes" ref={div}>
+        <div className="notes" ref={div} draggable="true">
            
             <textarea className="textareadata" ref={editText}  onChange={()=>{
             }}>{text}</textarea>

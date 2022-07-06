@@ -4,7 +4,6 @@ import AddNote from './AddNote';
 
 
 
-
 const NotesList = ({ notes,handleAddNote,handleDeleteNote,handleEditNote,currentDate}) => {
     function searchDateValue(){
 //    console.log("Search")
@@ -19,7 +18,7 @@ const NotesList = ({ notes,handleAddNote,handleDeleteNote,handleEditNote,current
         <>
         <div className="notes_list">
             <AddNote handleAddNote={handleAddNote}/>
-            {
+                {
              searchDateValue()
             }
             

@@ -8,6 +8,8 @@ import {atomDate} from "../src/recoiljs/atoms"
 import { useRecoilValue } from 'recoil';
 import {selectorDate} from "../src/recoiljs/selectAtoms"
 import FixedHeader from "./components/FixedHeader";
+import "react-grid-layout/css/styles.css"
+import "react-resizable/css/styles.css"
 const App = () => {
   const dateString = new Date();
   const validDate=dateString.toString().split(" ").splice(0,5).join(" ")
