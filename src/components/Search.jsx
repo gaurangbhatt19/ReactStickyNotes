@@ -13,7 +13,7 @@ const Search = ({handleSearchNote}) => {
     return (
         <div className="search">
         <div className="search_bar">
-          <MdSearch className="search_icon" size="1.3rem"/>
+          <MdSearch className="search_icon" size="2rem"/>
           <input onChange={(event)=>{
               handleSearchNote(event.target.value);
           }} type="text" placeholder="Search Notes........"></input>

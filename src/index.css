@@ -92,9 +92,9 @@ textarea {
   height: 100%;
   outline: none;
   box-shadow: 0px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+  /* font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
   "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-  sans-serif;
+  sans-serif; */
   font-weight: normal;
   font-size:15px;
   font-family: "Architects Daugther", cursive;
@@ -147,7 +147,7 @@ textarea {
 }
 .search{
   display:grid;
-  grid-template-columns: 88% 12%;
+  grid-template-columns: 85% 15%;
 }
 .search_by_date{
   border-radius: 8px;
@@ -159,7 +159,7 @@ textarea {
   /* position: relative;
   left:-4em; */
   text-align: center;
-  width: 13em;
+  width: 9em;
 }
 .search_bar {
   display: flex;
@@ -168,7 +168,7 @@ textarea {
   border-radius: 10px;
   padding: 5px;
   margin: bottom 5.5em;
-  width: 81vw;
+  width: 77vw;
 }
 .search_bar input {
   position:-webkit-sticky;
@@ -188,7 +188,7 @@ textarea {
 }
 .header {
   display: grid;
-  grid-template-columns: 90%  10%;
+  grid-template-columns: 86%  14%;
   grid-gap: 5px;
   /* align-items: center; */
   /* justify-content: space-between; */
