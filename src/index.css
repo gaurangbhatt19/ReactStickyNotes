@@ -156,8 +156,6 @@ textarea {
   border: 4px solid dodgerblue;
   background-color: dodgerblue;
   color: white;
-  /* position: relative;
-  left:-4em; */
   text-align: center;
   width: 9em;
 }
@@ -190,8 +188,6 @@ textarea {
   display: grid;
   grid-template-columns: 86%  14%;
   grid-gap: 5px;
-  /* align-items: center; */
-  /* justify-content: space-between; */
 }
 .save.toggle :hover {
   color: white;
