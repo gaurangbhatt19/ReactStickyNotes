@@ -11,6 +11,30 @@ import FixedHeader from "./components/FixedHeader";
 import "react-grid-layout/css/styles.css"
 import "react-resizable/css/styles.css"
 const App = () => {
+
+ useEffect(() =>{
+  document.onkeydown = (e) => {
+    if (e.ctrlKey && e.key === 's') {
+      e.preventDefault();
+      console.log('CTRL + S');
+      var focused_element = null;
+if (
+    document.hasFocus() &&
+    document.activeElement !== document.body &&
+    document.activeElement !== document.documentElement
+) {
+    focused_element = document.activeElement.tagName;
+
+   let element=document.getElementsByTagName(focused_element).nextSibling;
+    // let save=document.getSelection(focused_element.nextSibling.childNodes[1].childNodes[1])
+    console.log(element)
+
+
+}
+    }
+  }
+ },[])
+
   const dateString = new Date();
   const validDate=dateString.toString().split(" ").splice(0,5).join(" ")
   const [notes, setNotes] = useState([
@@ -23,11 +47,6 @@ const App = () => {
 
  const [reloadCheck,setReloadCheck]=useState(true)
  const getAtomDate=useRecoilValue(selectorDate)
-
-  function refreshPage() {
-   
-  }
-
 
   const addNote = (text) => {
     const date = new Date();
@@ -60,7 +79,6 @@ const App = () => {
   localStorage.setItem("react_notes_data",JSON.stringify(notes));
   setLocalStorageValues(JSON.parse(localStorage.getItem("react_notes_data")))
   // console.log(notes)
-  refreshPage()
   }
 
   var searchDate=useRecoilValue(selectorDate);

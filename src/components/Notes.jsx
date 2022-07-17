@@ -25,8 +25,10 @@ const Notes = ({id,text,date,handleDeleteNote,handleEditNote}) => {
         
     }
 
+    console.log(document.onclick)
+   
     return (
-        <div className="notes" ref={div} draggable="true">
+        <div className="notes" ref={div} name={"note_"+id}>
            
             <textarea className="textareadata" ref={editText}  onChange={()=>{
             }}>{text}</textarea>
