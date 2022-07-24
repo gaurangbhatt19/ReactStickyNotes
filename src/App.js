@@ -10,6 +10,7 @@ import {selectorDate} from "../src/recoiljs/selectAtoms"
 import FixedHeader from "./components/FixedHeader";
 import "react-grid-layout/css/styles.css"
 import "react-resizable/css/styles.css"
+import { ToastContainer, toast } from 'material-react-toastify';
 const App = () => {
 
  useEffect(() =>{
@@ -46,12 +47,11 @@ if (
   ]);
 
  const [reloadCheck,setReloadCheck]=useState(true)
- const getAtomDate=useRecoilValue(selectorDate)
 
   const addNote = (text) => {
     const date = new Date();
     const validDate=date.toString().split(" ").splice(0,5).join(" ")
-    // console.log(validDate)
+
     var newNote = {
       id: nanoid(),
       text: text,
@@ -64,6 +64,7 @@ if (
   const deleteNote = (id) => {
     const newNotes = notes.filter((note) => note.id !== id);
     setNotes(newNotes);
+    notify("Note Deleted Successfully !......","delete")
   };
 
   const editNote = (id,text) => {
@@ -78,7 +79,8 @@ if (
   setNotes(edittedNotes)
   localStorage.setItem("react_notes_data",JSON.stringify(notes));
   setLocalStorageValues(JSON.parse(localStorage.getItem("react_notes_data")))
-  // console.log(notes)
+  notify("Note Saved Successfully !......","save")
+
   }
 
   var searchDate=useRecoilValue(selectorDate);
@@ -91,7 +93,6 @@ if (
   useEffect(()=>{
    
    if(!reloadCheck){
-    //  console.log(reloadCheck,"reload")
       localStorage.setItem("toggle",darkMode)
       
    }
@@ -108,13 +109,28 @@ if (
     }
 
     localStorage.getItem("toggle")==="false" || localStorage.getItem("toggle")===null?setDarkMode(false):setDarkMode(true)
-    // console.log(localStorage.getItem("toggle"))
     setReloadCheck(!reloadCheck)
   }, [localStorageValues]);
 
   useEffect(() => {
     localStorage.setItem("react_notes_data", JSON.stringify(notes));
   }, [notes]);
+
+
+  const notify=(text,type)=>{
+    if(type==="save"){
+        toast.success(text,{
+        position:"bottom-right"
+    })
+    }
+    else if(type==="delete"){
+        toast.error(text,{
+            position:"bottom-right"
+        })
+    }
+    
+}
+
 
   return (
     <>
@@ -135,6 +151,7 @@ if (
             handleEditNote={editNote}
             currentDate={atomDate}
           />
+          <ToastContainer draggable autoClose={1000}/>
         </div>
       </div>
     </>

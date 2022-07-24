@@ -9,6 +9,10 @@ const Header = ({handleDarkMode}) => {
             }}>
             Add Note      
             </button> */}
+            {/* <h3>Grid Layout Change</h3>
+            <input type="range" onChange={(e)=>{
+                console.log(e.target.value);
+            }}/> */}
             <button className="save toggle" onClick={()=>
             handleDarkMode((previousDarkMode)=>!previousDarkMode)}>
             
