@@ -14,26 +14,25 @@ import { ToastContainer, toast } from 'material-react-toastify';
 const App = () => {
 
  useEffect(() =>{
-  document.onkeydown = (e) => {
-    if (e.ctrlKey && e.key === 's') {
-      e.preventDefault();
-      console.log('CTRL + S');
-      var focused_element = null;
-if (
-    document.hasFocus() &&
-    document.activeElement !== document.body &&
-    document.activeElement !== document.documentElement
-) {
-    focused_element = document.activeElement.tagName;
+//   document.onkeydown = (e) => {
+//     if (e.ctrlKey && e.key === 's') {
+//       e.preventDefault();
+//       console.log('CTRL + S');
+//       var focused_element = null;
+// if (
+//     document.hasFocus() &&
+//     document.activeElement !== document.body &&
+//     document.activeElement !== document.documentElement
+// ) {
+//     focused_element = document.activeElement.tagName;
 
-   let element=document.getElementsByTagName(focused_element).nextSibling;
-    // let save=document.getSelection(focused_element.nextSibling.childNodes[1].childNodes[1])
-    console.log(element)
+//    let element=document.getElementsByTagName(focused_element).nextSibling;
+//     console.log(element)
 
 
-}
-    }
-  }
+// }
+//     }
+//   }
  },[])
 
   const dateString = new Date();
