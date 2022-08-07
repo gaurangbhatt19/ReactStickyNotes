@@ -66,7 +66,7 @@ const App = () => {
     notify("Note Deleted Successfully !......","delete")
   };
 
-  const editNote = (id,text) => {
+  const editNote = (id,text,isClicked) => {
     const edittedNotes=notes;
 
   for(var i=0;i<edittedNotes.length;i++){
@@ -78,9 +78,13 @@ const App = () => {
   setNotes(edittedNotes)
   localStorage.setItem("react_notes_data",JSON.stringify(notes));
   setLocalStorageValues(JSON.parse(localStorage.getItem("react_notes_data")))
-  notify("Note Saved Successfully !......","save")
 
+  if(isClicked) 
+  {
+    notify("Note Saved Successfully !......","save")
   }
+  
+}
 
   var searchDate=useRecoilValue(selectorDate);
 
